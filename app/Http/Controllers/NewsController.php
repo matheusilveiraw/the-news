@@ -10,12 +10,14 @@ class NewsController extends Controller
     {
         $response = Http::withHeaders([
             'Authorization' => env('NEWS_API_KEY')
-        ])->get(env('NEWS_API_URL') . 'everything', [
-            'q' => 'tecnologia',
-            'language' => 'pt',
-            'pageSize' => 100,
-        ]);
-    
-        dd($response->json());
+    ])->get(env('NEWS_API_URL') . 'everything', [
+        'q' => 'tecnologia',
+        'language' => 'pt',
+        'pageSize' => 100,
+    ]);
+
+        $articles = $response->json()['articles'] ?? [];
+
+        return view('index', compact('articles'));
     }
 }
