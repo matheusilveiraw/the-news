@@ -13,8 +13,10 @@ class NewsController extends Controller
     ])->get(env('NEWS_API_URL') . 'everything', [
         'q' => 'tecnologia',
         'language' => 'pt',
-        'pageSize' => 100,
+        'pageSize' => 5,
     ]);
+
+        // dd($response->json());
 
         $articles = $response->json()['articles'] ?? [];
 
