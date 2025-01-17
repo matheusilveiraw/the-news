@@ -2,22 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class NewsController extends Controller
 {
     public function index()
     {
-        $response = Http::withHeaders([
-            'Authorization' => env('NEWS_API_KEY')
-        ])->get(env('NEWS_API_URL') . 'top-headlines', [
-            'language' => 'en',
-            'pageSize' => 100,
-            'sortBy' => 'publishedAt',
+        $apiKey = env('CURRENTS_API_KEY');
+        $apiUrl = env('CURRENTS_API_URL');
+        
+        // Requisição para pegar as últimas notícias
+        $response = Http::timeout(50)->get("{$apiUrl}latest-news", [
+            'apiKey' => $apiKey,
+            'language' => 'pt',
+            'limit' => 20,  // Limitar para 20 notícias
         ]);
-
-        $articles = $response->json()['articles'];
-
-        return view('index', compact('articles'));
+        
+        if ($response->successful()) {
+            $noticias = $response->json()['news'];
+            return view('index', compact('noticias'));
+        } else {
+            return view('index')->with('erro', 'Não foi possível carregar as notícias.');
+        }
     }
 }
