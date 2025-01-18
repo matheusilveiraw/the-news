@@ -18,11 +18,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($noticias as $noticia)
                     <div class="bg-white p-4 rounded shadow-md">
-                        @if(isset($noticia['image']))
+                        @if(isset($noticia['image']) && $noticia['image'] !== 'None')
                             <img src="{{ $noticia['image'] }}" alt="Image" class="w-full h-40 object-cover rounded mb-4">
+                            <h2 class="text-xl font-semibold">{{ $noticia['title'] }}</h2>
+                        @else
+                            <h2 class="text-2xl font-semibold">{{ $noticia['title'] }}</h2>
                         @endif
-                        <h2 class="text-xl font-semibold">{{ $noticia['title'] }}</h2>
-                        <p class="text-sm text-gray-500 mt-2">{!! \Illuminate\Support\Str::limit($noticia['description'], 100) !!}</p>
+                        <p class="text-sm text-gray-500 mt-2">{!! \Illuminate\Support\Str::limit($noticia['description'], 300) !!}</p>
                         <a href="{{ $noticia['url'] }}" class="text-blue-500 mt-2 block">Leia mais</a>
                     </div>
                 @endforeach

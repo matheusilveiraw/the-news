@@ -20,8 +20,6 @@ class NewsController extends Controller
         
         if ($resposta->successful()) {
             $noticias = $resposta->json()['news'];
-
-            dd($noticias);
             
             return view('index', compact('noticias'));
         } else {
