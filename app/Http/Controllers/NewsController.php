@@ -9,17 +9,20 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $apiKey = env('CURRENTS_API_KEY');
-        $apiUrl = env('CURRENTS_API_URL');
+        $chaveApi = env('CURRENTS_API_KEY');
+        $urlApi = env('CURRENTS_API_URL');
         
-        $response = Http::timeout(50)->get("{$apiUrl}latest-news", [
-            'apiKey' => $apiKey,
-            'language' => 'pt',
+        $resposta = Http::timeout(50)->get("{$urlApi}latest-news", [
+            'apiKey' => $chaveApi,
+            'language' => 'en',
             'limit' => 20,
         ]);
         
-        if ($response->successful()) {
-            $noticias = $response->json()['news'];
+        if ($resposta->successful()) {
+            $noticias = $resposta->json()['news'];
+
+            dd($noticias);
+            
             return view('index', compact('noticias'));
         } else {
             return view('index')->with('erro', 'Não foi possível carregar as notícias.');
