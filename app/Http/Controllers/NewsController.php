@@ -12,11 +12,10 @@ class NewsController extends Controller
         $apiKey = env('CURRENTS_API_KEY');
         $apiUrl = env('CURRENTS_API_URL');
         
-        // Requisição para pegar as últimas notícias
         $response = Http::timeout(50)->get("{$apiUrl}latest-news", [
             'apiKey' => $apiKey,
             'language' => 'pt',
-            'limit' => 20,  // Limitar para 20 notícias
+            'limit' => 20,
         ]);
         
         if ($response->successful()) {
