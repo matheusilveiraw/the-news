@@ -13,7 +13,7 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-6">
                 <h1 class="text-2xl font-bold text-red-600">
-                    <a href="{{ route('home') }}" ">The News</a>
+                    <a href="{{ route('index') }}" ">The News</a>
                 </h1>
                 <button class="md:hidden focus:outline-none" id="menu-btn">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -21,8 +21,8 @@
                     </svg>
                 </button>
                 <div class="hidden md:flex space-x-4" id="menu">
-                    <a href="{{ route('home') }}" class="hover:text-red-500">Início</a>
-                    <a href="#" class="hover:text-red-500">Política</a>
+                    <a href="{{ route('index') }}" class="hover:text-red-500">Início</a>
+                    <a href="{{ route('politica') }}" class="hover:text-red-500">Política</a>
                     <a href="#" class="hover:text-red-500">Esportes</a>
                     <a href="#" class="hover:text-red-500">Tecnologia</a>
                     <a href="#" class="hover:text-red-500">Entretenimento</a>

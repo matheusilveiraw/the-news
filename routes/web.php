@@ -19,4 +19,6 @@ use App\Http\Controllers\NewsController;
 //     return view('welcome');
 // });
 
-Route::get('/', [NewsController::class, 'index'])->name('home');
+Route::get('/', [NewsController::class, 'index'])->name('index');
+
+Route::get('/politics', [NewsController::class, 'pesquisaPolitica'])->name('politica');;
