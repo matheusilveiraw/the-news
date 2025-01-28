@@ -68,10 +68,8 @@
     </div>
     <footer class="bg-black py-3">
         <div class="container mx-auto text-center">
-            <a class="text-white hover:text-red-500 inline-block" href="https://github.com/matheusilveiraw">
-                <i data-feather="github" class="w-5 h-5 inline"></i>
-            </a>
             <a href="https://github.com/matheusilveiraw" class="text-white hover:text-red-500 mx-2">
+                <i data-feather="github" class="w-5 h-5 inline"></i>
                 @matheusilveiraw
             </a>
             <span class="text-white">
@@ -82,6 +80,7 @@
             </span>
         </div>
     </footer>
+    <script src="https://unpkg.com/feather-icons"></script>
 
     <script>
         feather.replace();
