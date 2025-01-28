@@ -19,7 +19,7 @@
                     </svg>
                 </button>
                 <div class="hidden md:flex space-x-4" id="menu">
-                    <a href="#" class="hover:text-red-500">Início</a>
+                    <a href="{{ route('home') }}" class="hover:text-red-500">Início</a>
                     <a href="#" class="hover:text-red-500">Política</a>
                     <a href="#" class="hover:text-red-500">Esportes</a>
                     <a href="#" class="hover:text-red-500">Tecnologia</a>
