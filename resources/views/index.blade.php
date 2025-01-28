@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notícias</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100">
     <nav class="bg-black text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
@@ -44,28 +46,46 @@
 
     <div class="container mx-auto p-4">
         @if(isset($erro))
-            <div class="bg-red-600 text-white p-4 rounded mb-4">
-                <p>{{ $erro }}</p>
-            </div>
+        <div class="bg-red-600 text-white p-4 rounded mb-4">
+            <p>{{ $erro }}</p>
+        </div>
         @else
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach($noticias as $noticia)
-                    <div class="bg-white p-4 rounded shadow-md">
-                        @if(isset($noticia['image']) && $noticia['image'] !== 'None')
-                            <img src="{{ $noticia['image'] }}" alt="Image" class="w-full h-40 object-cover rounded mb-4">
-                            <h2 class="text-xl font-semibold text-black">{{ $noticia['title'] }}</h2>
-                        @else
-                            <h2 class="text-2xl font-semibold text-black">{{ $noticia['title'] }}</h2>
-                        @endif
-                        <p class="text-sm text-gray-600 mt-2">{!! \Illuminate\Support\Str::limit($noticia['description'], 300) !!}</p>
-                        <a href="{{ $noticia['url'] }}" class="text-red-600 mt-2 block hover:underline">Leia mais</a>
-                    </div>
-                @endforeach
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach($noticias as $noticia)
+            <div class="bg-white p-4 rounded shadow-md">
+                @if(isset($noticia['image']) && $noticia['image'] !== 'None')
+                <img src="{{ $noticia['image'] }}" alt="Image" class="w-full h-40 object-cover rounded mb-4">
+                <h2 class="text-xl font-semibold text-black">{{ $noticia['title'] }}</h2>
+                @else
+                <h2 class="text-2xl font-semibold text-black">{{ $noticia['title'] }}</h2>
+                @endif
+                <p class="text-sm text-gray-600 mt-2">{!! \Illuminate\Support\Str::limit($noticia['description'], 300) !!}</p>
+                <a href="{{ $noticia['url'] }}" class="text-red-600 mt-2 block hover:underline">Leia mais</a>
             </div>
+            @endforeach
+        </div>
         @endif
     </div>
+    <footer class="bg-black py-3">
+        <div class="container mx-auto text-center">
+            <a class="text-white hover:text-red-500 inline-block" href="https://github.com/matheusilveiraw">
+                <i data-feather="github" class="w-5 h-5 inline"></i>
+            </a>
+            <a href="https://github.com/matheusilveiraw" class="text-white hover:text-red-500 mx-2">
+                @matheusilveiraw
+            </a>
+            <span class="text-white">
+                |
+            </span>
+            <span class="text-white hover:text-red-500">
+                matheus.silveiraw@gmail.com
+            </span>
+        </div>
+    </footer>
 
     <script>
+        feather.replace();
+
         document.getElementById('menu-btn').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
@@ -86,4 +106,5 @@
         });
     </script>
 </body>
+
 </html>
