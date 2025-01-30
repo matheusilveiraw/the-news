@@ -21,4 +21,6 @@ use App\Http\Controllers\NewsController;
 
 Route::get('/', [NewsController::class, 'index'])->name('index');
 
-Route::get('/politics', [NewsController::class, 'pesquisaPolitica'])->name('politica');;
+Route::get('/politics', [NewsController::class, 'pesquisaPolitica'])->name('politica');
+
+Route::get('/sports', [NewsController::class, 'pesquisaEsportes'])->name('esportes');

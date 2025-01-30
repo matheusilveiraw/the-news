@@ -50,4 +50,26 @@ class NewsController extends Controller
             return view('index')->with('erro', 'Não foi possível carregar as notícias.');
         }
     }
+
+    public function pesquisaEsportes()
+    {
+        $apiKey = env('CURRENTS_API_KEY');
+        $apiUrl = env('CURRENTS_API_URL');
+
+        $url = "{$apiUrl}search?apiKey={$apiKey}&language=en&keywords=sports";
+
+        $response = Http::timeout(20)->get($url);
+
+        if ($response->successful()) {
+            $noticias = $response->json()['news'];
+
+            if (empty($noticias)) {
+                return view('index')->with('erro', 'Nenhuma notícia encontrada para "futebol".');
+            }
+
+            return view('index', compact('noticias'));
+        } else {
+            return view('index')->with('erro', 'Não foi possível carregar as notícias.');
+        }
+    }
 }

@@ -15,18 +15,18 @@
                 <h1 class="text-2xl font-bold text-red-600">
                     <a href="{{ route('index') }}" ">The News</a>
                 </h1>
-                <button class="md:hidden focus:outline-none" id="menu-btn">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-                <div class="hidden md:flex space-x-4" id="menu">
-                    <a href="{{ route('index') }}" class="hover:text-red-500">Início</a>
-                    <a href="{{ route('politica') }}" class="hover:text-red-500">Política</a>
-                    <a href="#" class="hover:text-red-500">Esportes</a>
-                    <a href="#" class="hover:text-red-500">Tecnologia</a>
-                    <a href="#" class="hover:text-red-500">Entretenimento</a>
-                </div>
+                <button class=" md:hidden focus:outline-none" id="menu-btn">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        </button>
+                        <div class="hidden md:flex space-x-4" id="menu">
+                            <a href="{{ route('index') }}" class="hover:text-red-500">Início</a>
+                            <a href="{{ route('politica') }}" class="hover:text-red-500">Política</a>
+                            <a href="{{ route('esportes') }}" class="hover:text-red-500">Esportes</a>
+                            <a href="#" class="hover:text-red-500">Tecnologia</a>
+                            <a href="#" class="hover:text-red-500">Entretenimento</a>
+                        </div>
             </div>
             <div class="relative">
                 <button id="search-btn" class="focus:outline-none">
@@ -38,9 +38,9 @@
             </div>
         </div>
         <div class="md:hidden hidden p-4 space-y-2 bg-black text-white" id="mobile-menu">
-            <a href="#" class="block hover:text-red-500">Início</a>
-            <a href="#" class="block hover:text-red-500">Política</a>
-            <a href="#" class="block hover:text-red-500">Esportes</a>
+            <a href="{{ route('index') }}" class="block hover:text-red-500">Início</a>
+            <a href="{{ route('politica') }}" class="bock hover:text-red-500">Política</a>
+            <a href="{{ route('esportes') }}" class="block hover:text-red-500">Esportes</a>
             <a href="#" class="block hover:text-red-500">Tecnologia</a>
             <a href="#" class="block hover:text-red-500">Entretenimento</a>
         </div>
@@ -86,4 +86,5 @@
 
     <script src="/script.js"></script>
 </body>
+
 </html>
