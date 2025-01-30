@@ -25,7 +25,7 @@
                             <a href="{{ route('politica') }}" class="hover:text-red-500">Política</a>
                             <a href="{{ route('esportes') }}" class="hover:text-red-500">Esportes</a>
                             <a href="{{ route('tecnologia') }}" class="hover:text-red-500">Tecnologia</a>
-                            <a href="#" class="hover:text-red-500">Entretenimento</a>
+                            <a href="{{ route('entretenimento') }}" class="hover:text-red-500">Entretenimento</a>
                         </div>
             </div>
             <div class="relative">
@@ -42,7 +42,7 @@
             <a href="{{ route('politica') }}" class="bock hover:text-red-500">Política</a>
             <a href="{{ route('esportes') }}" class="block hover:text-red-500">Esportes</a>
             <a href="{{ route('tecnologia') }}" class="block hover:text-red-500">Tecnologia</a>
-            <a href="#" class="block hover:text-red-500">Entretenimento</a>
+            <a href="{{ route('entretenimento') }}" class="block hover:text-red-500">Entretenimento</a>
         </div>
     </nav>
 

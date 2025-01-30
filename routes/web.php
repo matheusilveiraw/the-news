@@ -26,3 +26,5 @@ Route::get('/politics', [NewsController::class, 'pesquisaPolitica'])->name('poli
 Route::get('/sports', [NewsController::class, 'pesquisaEsportes'])->name('esportes');
 
 Route::get('/technology', [NewsController::class, 'pesquisaTecnologia'])->name('tecnologia');
+
+Route::get('/entertainment', [NewsController::class, 'pesquisaEntretenimento'])->name('entretenimento');

@@ -94,4 +94,26 @@ class NewsController extends Controller
             return view('index')->with('erro', 'Não foi possível carregar as notícias.');
         }
     }
+
+    public function pesquisaEntretenimento()
+    {
+        $apiKey = env('CURRENTS_API_KEY');
+        $apiUrl = env('CURRENTS_API_URL');
+
+        $url = "{$apiUrl}search?apiKey={$apiKey}&language=en&keywords=media";
+
+        $response = Http::timeout(50)->get($url);
+
+        if ($response->successful()) {
+            $noticias = $response->json()['news'];
+
+            if (empty($noticias)) {
+                return view('index')->with('erro', 'Nenhuma notícia encontrada para "tecnologia".');
+            }
+
+            return view('index', compact('noticias'));
+        } else {
+            return view('index')->with('erro', 'Não foi possível carregar as notícias.');
+        }
+    }
 }
