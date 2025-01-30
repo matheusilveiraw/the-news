@@ -21,11 +21,11 @@
                         </svg>
                         </button>
                         <div class="hidden md:flex space-x-4" id="menu">
-                            <a href="{{ route('index') }}" class="hover:text-red-500">Início</a>
-                            <a href="{{ route('politica') }}" class="hover:text-red-500">Política</a>
-                            <a href="{{ route('esportes') }}" class="hover:text-red-500">Esportes</a>
-                            <a href="{{ route('tecnologia') }}" class="hover:text-red-500">Tecnologia</a>
-                            <a href="{{ route('entretenimento') }}" class="hover:text-red-500">Entretenimento</a>
+                            <a href="{{ route('index') }}" class="hover:text-red-500">Home</a>
+                            <a href="{{ route('politica') }}" class="hover:text-red-500">Politics</a>
+                            <a href="{{ route('esportes') }}" class="hover:text-red-500">Sports</a>
+                            <a href="{{ route('tecnologia') }}" class="hover:text-red-500">Technology</a>
+                            <a href="{{ route('entretenimento') }}" class="hover:text-red-500">Entertainment</a>
                         </div>
             </div>
             <div class="relative">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="md:hidden hidden p-4 space-y-2 bg-black text-white" id="mobile-menu">
-            <a href="{{ route('index') }}" class="block hover:text-red-500">Início</a>
+            <a href="{{ route('index') }}" class="block hover:text-red-500">Home</a>
             <a href="{{ route('politica') }}" class="bock hover:text-red-500">Política</a>
             <a href="{{ route('esportes') }}" class="block hover:text-red-500">Esportes</a>
             <a href="{{ route('tecnologia') }}" class="block hover:text-red-500">Tecnologia</a>

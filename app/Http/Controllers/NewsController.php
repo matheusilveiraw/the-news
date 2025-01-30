@@ -14,7 +14,7 @@ class NewsController extends Controller
         $chaveApi = env('CURRENTS_API_KEY');
         $urlApi = env('CURRENTS_API_URL');
 
-        $resposta = Http::timeout(50)->get("{$urlApi}latest-news", [
+        $resposta = Http::timeout(100)->get("{$urlApi}latest-news", [
             'apiKey' => $chaveApi,
             'language' => 'en',
             'limit' => 20,
@@ -36,7 +36,7 @@ class NewsController extends Controller
 
         $url = "{$apiUrl}search?apiKey={$apiKey}&language=en&keywords=politics";
 
-        $response = Http::timeout(20)->get($url);
+        $response = Http::timeout(100)->get($url);
 
         if ($response->successful()) {
             $noticias = $response->json()['news'];
@@ -58,7 +58,7 @@ class NewsController extends Controller
 
         $url = "{$apiUrl}search?apiKey={$apiKey}&language=en&keywords=sports";
 
-        $response = Http::timeout(20)->get($url);
+        $response = Http::timeout(100)->get($url);
 
         if ($response->successful()) {
             $noticias = $response->json()['news'];
@@ -80,7 +80,7 @@ class NewsController extends Controller
 
         $url = "{$apiUrl}search?apiKey={$apiKey}&language=en&keywords=technology";
 
-        $response = Http::timeout(20)->get($url);
+        $response = Http::timeout(100)->get($url);
 
         if ($response->successful()) {
             $noticias = $response->json()['news'];
@@ -102,7 +102,7 @@ class NewsController extends Controller
 
         $url = "{$apiUrl}search?apiKey={$apiKey}&language=en&keywords=media";
 
-        $response = Http::timeout(50)->get($url);
+        $response = Http::timeout(100)->get($url);
 
         if ($response->successful()) {
             $noticias = $response->json()['news'];
