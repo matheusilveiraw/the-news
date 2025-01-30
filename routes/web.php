@@ -24,3 +24,5 @@ Route::get('/', [NewsController::class, 'index'])->name('index');
 Route::get('/politics', [NewsController::class, 'pesquisaPolitica'])->name('politica');
 
 Route::get('/sports', [NewsController::class, 'pesquisaEsportes'])->name('esportes');
+
+Route::get('/technology', [NewsController::class, 'pesquisaTecnologia'])->name('tecnologia');
