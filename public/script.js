@@ -13,8 +13,19 @@ searchBtn.addEventListener('click', function() {
     searchInput.focus();
 });
 
+// Evento para capturar a tecla "Enter" na pesquisa
 searchInput.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
-        window.location.href = '/buscar?query=' + searchInput.value;
+        const query = searchInput.value.trim();
+        if (query !== "") {
+            window.location.href = `/buscar?q=${encodeURIComponent(query)}`;
+        }
     }
+});
+
+// Verificação se o script está carregando corretamente
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script carregado!");  // Teste de carregamento
+
+    alert('!!!');  // Deve aparecer se o script estiver funcionando
 });

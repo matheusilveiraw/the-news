@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use Illuminate\Http\Request;
+use App\Http\Controllers\PesquisaController;
 
 
 /*
@@ -28,3 +30,11 @@ Route::get('/sports', [NewsController::class, 'pesquisaEsportes'])->name('esport
 Route::get('/technology', [NewsController::class, 'pesquisaTecnologia'])->name('tecnologia');
 
 Route::get('/entertainment', [NewsController::class, 'pesquisaEntretenimento'])->name('entretenimento');
+
+Route::get('/buscar', [PesquisaController::class, 'buscar'])->name('buscar');
+
+// Route::get('/buscar', function (Request $request) {
+//     $query = $request->query('query'); // Captura o valor do parâmetro 'query'
+    
+//     return "Você pesquisou por: " . $query;
+// });
