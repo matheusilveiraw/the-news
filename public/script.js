@@ -22,10 +22,3 @@ searchInput.addEventListener('keypress', function(e) {
         }
     }
 });
-
-// Verificação se o script está carregando corretamente
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script carregado!");  // Teste de carregamento
-
-    alert('!!!');  // Deve aparecer se o script estiver funcionando
-});
