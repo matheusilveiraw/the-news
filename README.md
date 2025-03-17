@@ -25,3 +25,81 @@ O principal desafio deste projeto foi integrar de forma eficiente a API Currents
 - **API Currents:** Fonte de dados para as notícias.
 - **Composer:** Gerenciador de dependências PHP.
 - **NPM/Yarn:** Gerenciador de pacotes para as dependências do frontend (se necessário).
+
+## Passos para Configuração
+
+### Clone o Repositório
+
+```bash
+git clone https://github.com/matheusilveiraw/the-news.git
+```
+
+### Instale as Dependências PHP
+
+```bash
+composer install
+```
+
+### Instale as Dependências JavaScript
+
+```bash
+npm install
+```
+
+### Configure o Ambiente
+
+1. Renomeie o arquivo `.env.example` para `.env`:
+   
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Gere uma chave de aplicação:
+   
+   ```bash
+   php artisan key:generate
+   ```
+
+3. Edite o arquivo `.env` e configure as seguintes variáveis:
+
+   #### Configurações do Banco de Dados:
+   
+   ```ini
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=seu_banco_de_dados
+   DB_USERNAME=seu_usuario
+   DB_PASSWORD=sua_senha
+   ```
+
+   #### Chave da API Currents:
+   
+   ```ini
+   CURRENTS_API_KEY=sua_chave_da_api
+   ```
+
+   > **Nota**: Você pode obter uma chave de API gratuita registrando-se no site da [Currents](https://currentsapi.services/).
+
+### Compile os Ativos Frontend
+
+```bash
+npm run dev
+```
+
+> **Nota**: Para compilar os ativos para produção, utilize `npm run prod`.
+
+### Execute as Migrações do Banco de Dados
+
+```bash
+php artisan migrate
+```
+
+### Inicie o Servidor de Desenvolvimento
+
+```bash
+php artisan serve
+```
+
+A aplicação estará disponível em `http://localhost:8000`. 
+
